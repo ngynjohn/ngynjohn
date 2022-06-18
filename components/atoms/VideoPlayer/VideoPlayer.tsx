@@ -8,6 +8,7 @@ export interface VideoPlayerProps {
   loop: boolean;
   muted: boolean;
   playsInline: boolean;
+  style: {};
 }
 
 /**
@@ -22,11 +23,13 @@ export default function VideoPlayer({
   src,
   type,
   playsInline,
+  style,
 }: Partial<VideoPlayerProps>) {
   return (
     <video
       style={{
         pointerEvents: `${playsInline ? 'none' : 'auto'}`,
+        ...style
       }}
       width={width}
       height={height}
