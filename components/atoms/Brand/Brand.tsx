@@ -9,7 +9,7 @@ const useStyles = createStyles(() => ({
     height: '100%',
     color: 'white',
     fontFamily: 'tgHaidoGrotesk, sans-serif',
-    fontSize: '2em',
+    fontSize: '1.5em',
   },
 }));
 

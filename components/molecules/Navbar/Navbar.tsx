@@ -17,7 +17,9 @@ import {
   BrandYoutube,
   BrandInstagram
 } from 'tabler-icons-react';
+import Hamburger from 'hamburger-react';
 import Brand from '../../atoms/Brand/Brand';
+
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -36,7 +38,6 @@ const useStyles = createStyles((theme) => ({
 
   links: {
     color: 'white',
-    width: 260,
     gap: 20,
 
     [theme.fn.smallerThan('sm')]: {
@@ -53,7 +54,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   burger: {
+    display: 'flex',
+    alignItems: 'center',
     marginRight: theme.spacing.md,
+
 
     [theme.fn.largerThan('sm')]: {
       display: 'none',
@@ -102,7 +106,7 @@ const links = [
 ]
 
 export default function HeaderMiddle() {
-  const [opened, toggleOpened] = useBooleanToggle(false);
+  const [isOpen, setOpen] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
 
@@ -119,14 +123,24 @@ export default function HeaderMiddle() {
     console.log('Burger Clicked!')
   }, [])
 
+  const useEffect = useCallback(() => {
+    if (isOpen) {
+      setActive(window.location.pathname);
+    }
+  }, [isOpen])
+
   return (
     <nav className={classes.wrapper}>
-        <Burger
-          opened={opened}
-          onClick={onClick}
-          size="sm"
-          className={classes.burger}
+      <Container className={classes.burger}>
+        <Hamburger
+          toggled={isOpen}
+          toggle={setOpen}
+          size={20}
+          duration={.5}
+          direction="right"
+          color='white'
         />
+      </Container>
         <Group
           className={classes.links}
           spacing={5}
@@ -136,9 +150,7 @@ export default function HeaderMiddle() {
 
         <Brand />
 
-        <Group
-
-        >
+        <Group>
         <Group
           spacing={10}
           className={classes.social}
@@ -148,13 +160,13 @@ export default function HeaderMiddle() {
           <a href='https://www.tiktok.com/@ngynjohn?lang=en'>
             <BrandTiktok
               color="white"
-              size={30}
+              size={25}
             />
           </a>
           <a href='https://www.instagram.com/ngynjohn/'>
             <BrandInstagram
               color="white"
-              size={30}
+              size={25}
             />
           </a>
         </Group>
