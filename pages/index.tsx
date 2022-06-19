@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         left: '0',
         zIndex: '-1',
       }}
-      src="/broll.mp4"
+      src="/crop.mp4"
     >
       <Head>
         <title>JN</title>
