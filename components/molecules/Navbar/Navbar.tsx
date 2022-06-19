@@ -58,6 +58,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   burger: {
+    color: 'white',
     marginRight: theme.spacing.md,
 
     [theme.fn.largerThan('sm')]: {
@@ -136,7 +137,10 @@ export default function HeaderMiddle() {
           size="sm"
           className={classes.burger}
         />
-        <Group className={classes.links} spacing={5}>
+        <Group
+          className={classes.links}
+          spacing={5}
+        >
           {items}
         </Group>
 

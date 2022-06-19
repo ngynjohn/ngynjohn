@@ -5,8 +5,8 @@ import {
 
 const useStyles = createStyles(() => ({
   text: {
-    height: '100%',
     display: 'flex',
+    height: '100%',
     color: 'white',
     fontFamily: 'tgHaidoGrotesk, sans-serif',
     fontSize: '2em',
