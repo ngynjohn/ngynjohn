@@ -13,7 +13,7 @@ import {
 } from '@mantine/core';
 import { useBooleanToggle } from '@mantine/hooks';
 import {
-  BrandTwitter,
+  BrandTiktok,
   BrandYoutube,
   BrandInstagram
 } from 'tabler-icons-react';
@@ -21,13 +21,20 @@ import Brand from '../../atoms/Brand/Brand';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    position: 'fixed',
     backgroundColor: 'black',
     borderColor: 'transparent',
+    width: '100vw',
+    height: '70px',
+    zIndex: 1,
   },
   innerWrapper: {
     display: 'flex',
     height: '100%',
-    justifyContent: 'space-between',
+    width: '',
+    justifyContent: 'space-around',
     alignItems: 'center',
 
     [theme.fn.smallerThan('sm')]: {
@@ -47,8 +54,8 @@ const useStyles = createStyles((theme) => ({
 
   social: {
     display: 'flex',
-    justifyContent: 'space-between',
-    width: 100,
+    justifyContent: 'space-around',
+    gap: '10px',
     height: '100%',
 
     [theme.fn.smallerThan('sm')]: {
@@ -58,7 +65,6 @@ const useStyles = createStyles((theme) => ({
   },
 
   burger: {
-    color: 'white',
     marginRight: theme.spacing.md,
 
     [theme.fn.largerThan('sm')]: {
@@ -92,24 +98,25 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const links = [
+  {
+    link: '/',
+    label: 'Home'
+  },
+  {
+    link: '/content',
+    label: 'Content',
+  },
+  {
+    link: '/about',
+    label: 'About'
+  },
+]
+
 export default function HeaderMiddle() {
   const [opened, toggleOpened] = useBooleanToggle(false);
+  const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
-
-  const links = [
-    {
-      link: '/',
-      label: 'Home'
-    },
-    {
-      link: '/content',
-      label: 'Content',
-    },
-    {
-      link: '/about',
-      label: 'About'
-    },
-  ]
 
   const items = links.map((link) => (
     <Link
@@ -125,12 +132,7 @@ export default function HeaderMiddle() {
   }, [])
 
   return (
-    <Header
-      className={classes.wrapper}
-      height={70}
-      mb={120}
-    >
-      <Container className={classes.innerWrapper}>
+    <nav className={classes.wrapper}>
         <Burger
           opened={opened}
           onClick={onClick}
@@ -152,26 +154,19 @@ export default function HeaderMiddle() {
           position="right"
           noWrap
         >
-          <a href=''>
-            <BrandTwitter
+          <a href='https://www.tiktok.com/@ngynjohn?lang=en'>
+            <BrandTiktok
               color="white"
               size={18}
             />
           </a>
-          <a href=''>
-            <BrandYoutube
-              color="white"
-              size={18}
-            />
-          </a>
-          <a href=''>
+          <a href='https://www.instagram.com/ngynjohn/'>
             <BrandInstagram
               color="white"
               size={18}
             />
           </a>
         </Group>
-      </Container>
-    </Header>
+    </nav>
   );
 }

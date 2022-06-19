@@ -16,18 +16,16 @@ const Home: NextPage = () => {
   const title = opened ? 'Close Menu' : 'Open Menu'
 
   return (
-    <BackgroundVideo
+    <ScrollArea
       style={{
+        paddingTop: '70px',
+        height: '200vh',
         width: '100vw',
-        height: '100vh',
-        objectFit: 'cover',
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        zIndex: '-1',
       }}
-      src="/crop.mp4"
     >
+      <BackgroundVideo
+        src="/crop.mp4"
+      />
       <Head>
         <title>JN</title>
         <meta
@@ -35,15 +33,12 @@ const Home: NextPage = () => {
           content="Marketing, Branding, and Content Creation"
         />
       </Head>
-      <ScrollArea
-        style={{
-          width: '100vw',
-          height: '200vh',
-        }}
+      <Text
+        color="white"
       >
-
-      </ScrollArea>
-    </BackgroundVideo>
+        Test
+      </Text>
+    </ScrollArea>
   )
 }
 
