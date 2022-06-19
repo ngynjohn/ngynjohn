@@ -23,16 +23,24 @@ import Brand from '../../atoms/Brand/Brand';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
+
+  },
+
+  innerWrapper: {
     display: 'flex',
     justifyContent: 'center',
     position: 'fixed',
     backgroundColor: 'black',
     borderColor: 'transparent',
     width: '100vw',
-    height: '70px',
+    height: '63px',
+    paddingLeft: '2em',
+    paddingRight: '2em',
     zIndex: 1,
     [theme.fn.smallerThan('sm')]: {
       justifyContent: 'flex-start',
+      paddingLeft: '0',
+      paddingRight: '0',
     },
   },
 
@@ -43,6 +51,13 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan('sm')]: {
       display: 'none',
     },
+  },
+
+  brand: {
+    display: 'flex',
+    alignItems: 'center',
+    marginRight: 'auto',
+    marginLeft: 'auto',
   },
 
   social: {
@@ -56,7 +71,7 @@ const useStyles = createStyles((theme) => ({
   burger: {
     display: 'flex',
     alignItems: 'center',
-    marginRight: theme.spacing.md,
+    margin: '0',
 
 
     [theme.fn.largerThan('sm')]: {
@@ -131,6 +146,7 @@ export default function HeaderMiddle() {
 
   return (
     <nav className={classes.wrapper}>
+      <Group className={classes.innerWrapper}>
       <Container className={classes.burger}>
         <Hamburger
           toggled={isOpen}
@@ -148,7 +164,9 @@ export default function HeaderMiddle() {
           {items}
         </Group>
 
-        <Brand />
+        <Group className={classes.brand}>
+          <Brand />
+        </Group>
 
         <Group>
         <Group
@@ -171,6 +189,7 @@ export default function HeaderMiddle() {
           </a>
         </Group>
         </Group>
+      </Group>
     </nav>
   );
 }

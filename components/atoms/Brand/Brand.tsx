@@ -6,10 +6,13 @@ import {
 const useStyles = createStyles(() => ({
   text: {
     display: 'flex',
+    alignItems: 'center',
     height: '100%',
     color: 'white',
     fontFamily: 'tgHaidoGrotesk, sans-serif',
     fontSize: '1.5em',
+    paddingBottom: '9px',
+    overflow: 'hidden',
   },
 }));
 
