@@ -22,21 +22,13 @@ import Brand from '../../atoms/Brand/Brand';
 const useStyles = createStyles((theme) => ({
   wrapper: {
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     position: 'fixed',
     backgroundColor: 'black',
     borderColor: 'transparent',
     width: '100vw',
     height: '70px',
     zIndex: 1,
-  },
-  innerWrapper: {
-    display: 'flex',
-    height: '100%',
-    width: '',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-
     [theme.fn.smallerThan('sm')]: {
       justifyContent: 'flex-start',
     },
@@ -53,14 +45,10 @@ const useStyles = createStyles((theme) => ({
   },
 
   social: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    gap: '10px',
-    height: '100%',
-
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
       marginLeft: 'auto',
+      marginRight: '45px'
     },
   },
 
@@ -149,7 +137,10 @@ export default function HeaderMiddle() {
         <Brand />
 
         <Group
-          spacing={0}
+
+        >
+        <Group
+          spacing={10}
           className={classes.social}
           position="right"
           noWrap
@@ -157,15 +148,16 @@ export default function HeaderMiddle() {
           <a href='https://www.tiktok.com/@ngynjohn?lang=en'>
             <BrandTiktok
               color="white"
-              size={18}
+              size={30}
             />
           </a>
           <a href='https://www.instagram.com/ngynjohn/'>
             <BrandInstagram
               color="white"
-              size={18}
+              size={30}
             />
           </a>
+        </Group>
         </Group>
     </nav>
   );
