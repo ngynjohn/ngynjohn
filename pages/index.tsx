@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import BackgroundVideo from '../components/atoms/BackgroundVideo/BackgroundVideo';
 import {
   Text,
   Center,
+  ScrollArea,
+  Burger
 } from '@mantine/core';
 
 const Home: NextPage = () => {
+  const [opened, setOpened] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const title = opened ? 'Close Menu' : 'Open Menu'
+
   return (
     <BackgroundVideo
       style={{
@@ -27,22 +35,14 @@ const Home: NextPage = () => {
           content="Marketing, Branding, and Content Creation"
         />
       </Head>
-      <Center
+      <ScrollArea
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          height: '100vh',
-          color: 'white',
+          width: '100vw',
+          height: '200vh',
         }}
       >
-        <Text
-          style={{
-            fontSize: '5em',
-          }}
-        >
-          Landing Page
-        </Text>
-      </Center>
+
+      </ScrollArea>
     </BackgroundVideo>
   )
 }
