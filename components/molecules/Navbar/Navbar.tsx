@@ -23,10 +23,24 @@ import Brand from '../../atoms/Brand/Brand';
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-
+    display: 'flex',
+    justifyContent: 'center',
+    position: 'fixed',
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    width: '100vw',
+    height: '63px',
+    paddingLeft: '2em',
+    paddingRight: '2em',
+    zIndex: 1,
+    [theme.fn.smallerThan('sm')]: {
+      justifyContent: 'flex-start',
+      paddingLeft: '0',
+      paddingRight: '0',
+    },
   },
 
-  innerWrapper: {
+  scrolling: {
     display: 'flex',
     justifyContent: 'center',
     position: 'fixed',
@@ -64,7 +78,7 @@ const useStyles = createStyles((theme) => ({
     [theme.fn.smallerThan('sm')]: {
       display: 'flex',
       marginLeft: 'auto',
-      marginRight: '45px'
+      marginRight: '25px'
     },
   },
 
@@ -123,6 +137,7 @@ const links = [
 export default function HeaderMiddle() {
   const [isOpen, setOpen] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
+  const [isScrolling, setScrolling] = useState(false);
   const { classes, cx } = useStyles();
 
   const items = links.map((link) => (
@@ -144,9 +159,14 @@ export default function HeaderMiddle() {
     }
   }, [isOpen])
 
+  const changeBackground = () => {
+    window.scrollY >=10 ? setScrolling(true) : setScrolling(false);
+  }
+
+  window.addEventListener('scroll', changeBackground);
+
   return (
-    <nav className={classes.wrapper}>
-      <Group className={classes.innerWrapper}>
+    <nav className={isScrolling ? classes.scrolling : classes.wrapper}>
       <Container className={classes.burger}>
         <Hamburger
           toggled={isOpen}
@@ -189,7 +209,6 @@ export default function HeaderMiddle() {
           </a>
         </Group>
         </Group>
-      </Group>
     </nav>
   );
 }

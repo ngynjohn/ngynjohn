@@ -8,7 +8,11 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Navbar />
-      <main>
+      <main
+        style={{
+          marginTop: '63px',
+        }}
+      >
         {children}
       </main>
    </>

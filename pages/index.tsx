@@ -18,10 +18,10 @@ const Home: NextPage = () => {
   return (
     <ScrollArea
       style={{
-        paddingTop: '70px',
         height: '200vh',
         width: '100vw',
       }}
+      scrollbarSize={1}
     >
       <BackgroundVideo
         src="/crop.mp4"
