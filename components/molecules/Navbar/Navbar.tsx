@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useEffect,
   useCallback
 } from 'react';
 import Link from 'next/link';
@@ -153,17 +154,19 @@ export default function HeaderMiddle() {
     console.log('Burger Clicked!')
   }, [])
 
-  const useEffect = useCallback(() => {
+  const activeWindow = useCallback(() => {
     if (isOpen) {
       setActive(window.location.pathname);
     }
   }, [isOpen])
 
-  const changeBackground = () => {
-    window.scrollY >=10 ? setScrolling(true) : setScrolling(false);
-  }
+  useEffect(() => {
+    const changeBackground = () => {
+      window.scrollY >= 10 ? setScrolling(true) : setScrolling(false);
+    }
 
-  window.addEventListener('scroll', changeBackground);
+    window.addEventListener('scroll', changeBackground);
+  }, [isScrolling])
 
   return (
     <nav className={isScrolling ? classes.scrolling : classes.wrapper}>
