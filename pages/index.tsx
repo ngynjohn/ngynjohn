@@ -1,25 +1,31 @@
+import { useState } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import BackgroundVideo from '../components/atoms/BackgroundVideo/BackgroundVideo';
 import {
   Text,
   Center,
+  ScrollArea,
+  Burger
 } from '@mantine/core';
 
 const Home: NextPage = () => {
+  const [opened, setOpened] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const title = opened ? 'Close Menu' : 'Open Menu'
+
   return (
-    <BackgroundVideo
+    <ScrollArea
       style={{
+        height: '200vh',
         width: '100vw',
-        height: '100vh',
-        objectFit: 'cover',
-        position: 'fixed',
-        top: '0',
-        left: '0',
-        zIndex: '-1',
       }}
-      src="/crop.mp4"
+      scrollbarSize={1}
     >
+      <BackgroundVideo
+        src="/crop.mp4"
+      />
       <Head>
         <title>JN</title>
         <meta
@@ -27,23 +33,12 @@ const Home: NextPage = () => {
           content="Marketing, Branding, and Content Creation"
         />
       </Head>
-      <Center
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          height: '100vh',
-          color: 'white',
-        }}
+      <Text
+        color="white"
       >
-        <Text
-          style={{
-            fontSize: '5em',
-          }}
-        >
-          Landing Page
-        </Text>
-      </Center>
-    </BackgroundVideo>
+        Test
+      </Text>
+    </ScrollArea>
   )
 }
 
