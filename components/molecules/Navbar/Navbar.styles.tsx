@@ -5,7 +5,7 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     position: 'fixed',
-    backgroundColor: 'transparent',
+    backgroundColor: 'black',
     borderColor: 'transparent',
     width: '100vw',
     height: '63px',

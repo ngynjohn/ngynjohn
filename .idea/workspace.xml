@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ed55f29e-7086-4ec7-b878-4ebc6f353c31" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.styles.tsx" afterDir="false" />
+    <list default="true" id="ed55f29e-7086-4ec7-b878-4ebc6f353c31" name="Changes" comment="Add dev deps">
+      <change afterPath="$PROJECT_DIR$/components/molecules/Collection/Collection.styles.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/molecules/Collection/Collection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/john.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/content.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/content.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +70,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/michael/freelance/ngynjohn/asset&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/michael/freelance/ngynjohn/public&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
@@ -79,8 +82,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/asset" />
       <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/asset" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/components/atoms" />
     </key>
@@ -100,6 +103,8 @@
       <workItem from="1655595864224" duration="19400000" />
       <workItem from="1655618231192" duration="44000" />
       <workItem from="1655676358617" duration="3638000" />
+      <workItem from="1655745724903" duration="11196000" />
+      <workItem from="1655757665937" duration="4323000" />
     </task>
     <task id="LOCAL-00001" summary="Add dev deps">
       <created>1655502848322</created>
