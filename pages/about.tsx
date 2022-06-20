@@ -1,9 +1,18 @@
-import { Text } from '@mantine/core';
+import {
+  Text,
+  ScrollArea
+} from '@mantine/core';
 
 export default function About() {
   return (
-    <Text>
-      About Page
-    </Text>
+    <ScrollArea
+      style={{
+        height: '200vh',
+      }}
+    >
+      <Text>
+        About Page
+      </Text>
+    </ScrollArea>
   );
 }

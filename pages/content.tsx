@@ -1,9 +1,18 @@
-import { Text } from '@mantine/core';
+import {
+  Text,
+  ScrollArea
+} from '@mantine/core';
 
 export default function Content() {
   return (
-    <Text>
-      This is the content page
-    </Text>
+    <ScrollArea
+      style={{
+        height: '200vh'
+      }}
+    >
+      <Text>
+        This is the content page
+      </Text>
+    </ScrollArea>
   );
 }
