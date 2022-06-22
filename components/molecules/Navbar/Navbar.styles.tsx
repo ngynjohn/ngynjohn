@@ -5,7 +5,7 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     position: 'fixed',
-    backgroundColor: 'black',
+    backgroundColor: 'transparent',
     borderColor: 'transparent',
     width: '100vw',
     height: '63px',
@@ -65,8 +65,6 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     margin: '0',
-
-
     [theme.fn.largerThan('sm')]: {
       display: 'none',
     },

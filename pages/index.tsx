@@ -6,7 +6,8 @@ import {
   Text,
   Center,
   ScrollArea,
-  Burger
+  Burger,
+  Stack
 } from '@mantine/core';
 import {
   Parallax,
@@ -21,7 +22,15 @@ const Home: NextPage = () => {
   const title = opened ? 'Close Menu' : 'Open Menu'
 
   return (
-    <>
+    <ScrollArea
+      style={{
+        height: '200vh',
+        width: '100vw',
+        padding: '0',
+        margin: '0',
+        backgroundColor: 'black'
+      }}
+    >
     <Head>
       <title>JN</title>
       <meta
@@ -29,8 +38,9 @@ const Home: NextPage = () => {
         content="Marketing, Branding, and Content Creation"
       />
     </Head>
-    <Collection />
-    </>
+      <BackgroundVideo src="/crop.mp4" />
+    </ScrollArea>
+
   )
 }
 

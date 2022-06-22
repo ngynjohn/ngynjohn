@@ -11,7 +11,10 @@ import {
   Container,
   Burger
 } from '@mantine/core';
-import { useBooleanToggle } from '@mantine/hooks';
+import {
+  useBooleanToggle,
+  useWindowEvent
+} from '@mantine/hooks';
 import {
   BrandTiktok,
   BrandYoutube,
@@ -27,8 +30,8 @@ const links = [
     label: 'Home'
   },
   {
-    link: '/content',
-    label: 'Content',
+    link: '/videos',
+    label: 'Videos',
   },
   {
     link: '/about',
@@ -61,14 +64,13 @@ export default function Navbar() {
     }
   }, [isOpen])
 
+  const changeBackground = () => {
+    window.scrollY >= 10 ? setScrolling(true) : setScrolling(false);
+  }
   useEffect(() => {
-    const changeBackground = () => {
-      window.scrollY >= 10 ? setScrolling(true) : setScrolling(false);
-    }
-
-    window.addEventListener('scroll', changeBackground);
   }, [isScrolling])
 
+  useWindowEvent('scroll', changeBackground);
   return (
     <nav className={isScrolling ? classes.scrolling : classes.wrapper}>
       <Container className={classes.burger}>
