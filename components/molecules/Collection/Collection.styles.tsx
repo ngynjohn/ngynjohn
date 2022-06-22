@@ -26,7 +26,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   talent: {
     display: 'flex',
     justifyContent: 'flex-start',
-    marginTop: '5em',
+    marginTop: '4em',
     marginLeft: '12em',
     fontSize: '3em',
     color: 'white',
@@ -41,10 +41,10 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     color: 'white',
   },
 
-  consistency: {
+  transcend: {
     display: 'flex',
     justifyContent: 'flex-start',
-    marginTop: '5.5em',
+    marginTop: '5.2em',
     marginLeft: '2em',
     fontSize: '8em',
     fontWeight: 'bolder',
@@ -52,9 +52,9 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   },
 
   whiteSquare: {
-    maxHeight: '25em',
-    marginTop: '25em',
-    maxWidth: '80em',
+    maxHeight: '17em',
+    marginTop: '32em',
+    maxWidth: '70em',
     backgroundColor: 'white',
   },
 
@@ -76,7 +76,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   },
 
   videoThree: {
-    marginLeft: '45em',
+    marginLeft: '25em',
   },
 
   videoFour: {

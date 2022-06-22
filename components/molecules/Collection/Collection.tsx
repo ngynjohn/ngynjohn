@@ -75,10 +75,10 @@ export default function Collection() {
 
       <ParallaxLayer
         offset={1.95}
-        speed={1.3}
+        speed={1.2}
       >
-        <Text className={classes.consistency}>
-          CONSISTENCY
+        <Text className={classes.transcend}>
+          TRANSCEND
         </Text>
       </ParallaxLayer>
 
