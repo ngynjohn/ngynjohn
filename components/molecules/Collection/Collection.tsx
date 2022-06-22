@@ -35,84 +35,89 @@ export default function Collection() {
         offset={1}
         speed={1}
       >
-        <Text
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            fontSize: '10em',
-          }}
-          color="white"
-        >
+        <Text className={classes.inspire}>
           INSPIRE
         </Text>
       </ParallaxLayer>
 
       <ParallaxLayer
-        offset={1.7}
-        speed={5}
+        offset={1.8}
+        speed={2}
       >
-        <Text
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            marginRight: '2em',
-            fontSize: '5em',
-          }}
-          color="white"
-        >
+        <Text className={classes.create}>
           CREATE
         </Text>
       </ParallaxLayer>
 
       <ParallaxLayer
         offset={1.9}
-        speed={2.3}
+        speed={5}
       >
-        <Text
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-start',
-            marginLeft: '2em',
-            fontSize: '3em',
-          }}
-          color="white"
-        >
+        <Text className={classes.talent}>
           TALENT
         </Text>
       </ParallaxLayer>
 
       <ParallaxLayer
-        className={classes.left}
+        offset={1.95}
+        speed={3.5}
+      >
+        <Text className={classes.motivate}>
+          MOTIVATE
+        </Text>
+      </ParallaxLayer>
+
+      <ParallaxLayer
+        className={classes.whiteSquare}
+        offset={1.95}
+        speed={1}
+      />
+
+      <ParallaxLayer
+        offset={1.95}
+        speed={1.3}
+      >
+        <Text className={classes.consistency}>
+          CONSISTENCY
+        </Text>
+      </ParallaxLayer>
+
+
+      <ParallaxLayer
+        className={classes.videoDefault}
         offset={1.4}
-        speed={3}
+        speed={2}
       >
         <ReactPlayer
-          style={{
-            position: 'absolute',
-            left: 150,
-          }}
+          className={classes.videoOne}
           url="https://vimeo.com/576537006"
-          width={500}
           controls={true}
         />
       </ParallaxLayer>
 
       <ParallaxLayer
-        className={classes.right}
+        className={classes.videoDefault}
         offset={1.9}
-        speed={2}
+        speed={2.5}
       >
         <ReactPlayer
-          style={{
-            position: 'absolute',
-            right: 150,
-          }}
+          className={classes.videoTwo}
           url="https://vimeo.com/717945664"
-          width={500}
           controls={true}
         />
       </ParallaxLayer>
 
+      <ParallaxLayer
+        className={classes.videoDefault}
+        offset={2}
+        speed={2.2}
+      >
+        <ReactPlayer
+          className={classes.videoThree}
+          url="https://vimeo.com/716208763"
+          controls={true}
+        />
+      </ParallaxLayer>
     </Parallax>
   );
 };
