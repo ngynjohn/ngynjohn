@@ -24,25 +24,17 @@ import Hamburger from 'hamburger-react';
 import Brand from '../../atoms/Brand/Brand';
 import { useStyles } from './Navbar.styles';
 
-const links = [
-  {
-    link: '/',
-    label: 'Home'
-  },
-  {
-    link: '/videos',
-    label: 'Videos',
-  },
-  {
-    link: '/about',
-    label: 'About'
-  },
-]
+interface NavbarProps {
+  isScrolling: boolean;
+  links: {
+    link: string;
+    label: string;
+  }[];
+}
 
-export default function Navbar() {
+export default function Navbar({ links, isScrolling }: NavbarProps) {
   const [isOpen, setOpen] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
-  const [isScrolling, setScrolling] = useState(false);
   const { classes, cx } = useStyles();
 
   const items = links.map((link) => (
@@ -64,13 +56,6 @@ export default function Navbar() {
     }
   }, [isOpen])
 
-  const changeBackground = () => {
-    window.scrollY >= 10 ? setScrolling(true) : setScrolling(false);
-  }
-  useEffect(() => {
-  }, [isScrolling])
-
-  useWindowEvent('scroll', changeBackground);
   return (
     <nav className={isScrolling ? classes.scrolling : classes.wrapper}>
       <Container className={classes.burger}>
