@@ -23,11 +23,12 @@ const Home: NextPage = () => {
   return (
     <ScrollArea
       style={{
-        height: '300vh',
+        height: 'max-content',
         width: '100vw',
         padding: '0',
         margin: '0',
-        backgroundColor: 'black'
+        backgroundColor: 'black',
+        overflowX: 'hidden',
       }}
     >
     <Head>
