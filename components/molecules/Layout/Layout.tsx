@@ -1,4 +1,8 @@
-import { useState } from 'react';
+import {
+  useState,
+  useEffect
+} from 'react';
+import { useRouter } from 'next/router';
 import { useWindowEvent } from '@mantine/hooks';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
@@ -8,11 +12,21 @@ interface LayoutProps {
 };
 
 export default function Layout({ children }: LayoutProps) {
+  const router = useRouter();
   const [isScrolling, setScrolling] = useState(false);
+  const [showFooter, setShowFooter] = useState(true);
   const changeBackground = () => {
     window.scrollY >= 10 ? setScrolling(true) : setScrolling(false);
   }
   useWindowEvent('scroll', changeBackground);
+
+  const path = router.pathname;
+
+  useEffect(() => {
+    path === '/videos'
+      ? setShowFooter(false)
+      : setShowFooter(true);
+  }, [path])
 
   return (
     <>
@@ -31,6 +45,10 @@ export default function Layout({ children }: LayoutProps) {
               link: '/about',
               label: 'About'
             },
+            {
+              link: '/contact',
+              label: 'Contact'
+            },
           ]
         }
         isScrolling={isScrolling}
@@ -38,41 +56,11 @@ export default function Layout({ children }: LayoutProps) {
       <main>
         {children}
       </main>
-      <Footer
-        isScrolling={isScrolling}
-        data={[
-          {
-            title: 'Sitemap',
-            links: [
-              {
-                label: 'Home',
-                link: '/'
-              },
-              {
-                label: 'Videos',
-                link: '/videos'
-              },
-              {
-                label: 'About',
-                link: '/about'
-              },
-            ]
-          },
-          {
-            title: 'Social',
-            links: [
-              {
-                label: 'Tik Tok',
-                link: 'https://tiktok.com/@ngynjohn'
-              },
-              {
-                label: 'Instagram',
-                link: 'https://instagram.com/ngynjohn'
-              }
-            ]
-          }
-        ]}
-      />
+      {
+        showFooter
+          ? (<Footer/>)
+          : null
+      }
    </>
   );
 }

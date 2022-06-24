@@ -4,12 +4,16 @@ import { BrandTwitter, BrandYoutube, BrandInstagram } from 'tabler-icons-react';
 import Brand from '../../atoms/Brand/Brand';
 
 const useStyles = createStyles((theme) => ({
+  hideFooter: {
+    display: 'none',
+  },
+
   footer: {
-    marginTop: 120,
     paddingTop: theme.spacing.xl * 2,
     paddingBottom: theme.spacing.xl * 2,
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    borderTop: `1px solid ${
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.light,
+    color: 'black',
+    borderTop: `0px solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[2]
     }`,
   },
@@ -22,6 +26,14 @@ const useStyles = createStyles((theme) => ({
       flexDirection: 'column',
       alignItems: 'center',
     },
+  },
+
+  brand: {
+    display: 'flex',
+    justifyContent: 'center',
+    fontFamily: 'tgHaidoGrotesk, sans-serif',
+    fontSize: '1.5em',
+    overflow: 'hidden',
   },
 
   description: {
@@ -58,7 +70,7 @@ const useStyles = createStyles((theme) => ({
 
   link: {
     display: 'block',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[6],
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.light,
     fontSize: theme.fontSizes.sm,
     paddingTop: 3,
     paddingBottom: 3,
@@ -99,15 +111,40 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-interface FooterLinksProps {
-  data: {
-    title: string;
-    links: { label: string; link: string }[];
-  }[];
-  isScrolling: boolean;
-}
+const data = [
+  {
+    title: 'Sitemap',
+    links: [
+      {
+        label: 'Home',
+        link: '/'
+      },
+      {
+        label: 'Videos',
+        link: '/videos'
+      },
+      {
+        label: 'About',
+        link: '/about'
+      },
+    ]
+  },
+  {
+    title: 'Social',
+    links: [
+      {
+        label: 'Tik Tok',
+        link: 'https://tiktok.com/@ngynjohn'
+      },
+      {
+        label: 'Instagram',
+        link: 'https://instagram.com/ngynjohn'
+      }
+    ]
+  }
+]
 
-export default function Footer({ data, isScrolling }: FooterLinksProps) {
+export default function Footer() {
   const { classes } = useStyles();
   const groups = data.map((group) => {
     const links = group.links.map((link, index) => (
@@ -132,14 +169,7 @@ export default function Footer({ data, isScrolling }: FooterLinksProps) {
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <Text
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              fontFamily: 'tgHaidoGrotesk, sans-serif',
-              fontSize: '1.5em',
-            }}
-          >
+          <Text className={classes.brand}>
             ngynjohn
           </Text>
           <Text

@@ -35,6 +35,7 @@ export const useStyles = createStyles((theme) => ({
     backgroundPosition: 'center',
     width: 463,
     height: 820,
+    cursor: 'pointer',
     [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
       width: 420,
       height: 700,
@@ -46,7 +47,7 @@ export const useStyles = createStyles((theme) => ({
     [`@media (max-width: ${theme.breakpoints.xs}px)`]: {
       width: 400,
       height: 650,
-    }
+    },
   },
 
   stack: {
@@ -62,6 +63,7 @@ export const useStyles = createStyles((theme) => ({
     backgroundSize: 'cover',
     width: 768,
     height: 380,
+    cursor: 'pointer',
     [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
       width: 570,
       height: 350,

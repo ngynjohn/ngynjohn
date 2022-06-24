@@ -79,7 +79,6 @@ export default function Navbar({ links, isScrolling }: NavbarProps) {
           <Brand />
         </Group>
 
-        <Group>
         <Group
           spacing={10}
           className={classes.social}
@@ -98,7 +97,6 @@ export default function Navbar({ links, isScrolling }: NavbarProps) {
               size={25}
             />
           </a>
-        </Group>
         </Group>
     </nav>
   );

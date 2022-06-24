@@ -4,7 +4,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   wrapper: {
     top: '63',
     left: '0',
-    backgroundColor: 'black'
+    backgroundColor: 'black',
   },
 
   inspire: {
@@ -19,6 +19,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   create: {
     display: 'flex',
     justifyContent: 'flex-end',
+    marginTop: '3em',
     marginRight: '3em',
     fontSize: '5em',
     color: 'white',
@@ -45,7 +46,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     display: 'flex',
     justifyContent: 'flex-start',
     marginTop: '10em',
-    marginLeft: '17em',
+    marginLeft: '15em',
     fontSize: '4em',
     color: 'white',
     [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
@@ -54,11 +55,15 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     }
   },
 
+  transcendLayer: {
+    overflow: 'hidden !important',
+  },
+
   transcend: {
-    overflow: 'hidden',
+    overflow: 'hidden !important',
     display: 'flex',
     justifyContent: 'flex-start',
-    marginTop: '5.2em',
+    marginTop: '5em',
     marginLeft: '.75em',
     fontSize: '8em',
     fontWeight: 'bolder',
@@ -72,7 +77,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
   whiteSquare: {
     overflow: 'hidden',
     maxHeight: '17em',
-    marginTop: '32em',
+    marginTop: '30em',
     maxWidth: '60em',
     backgroundColor: 'white',
     [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
@@ -80,6 +85,19 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
       maxWidth: '40em',
       marginTop: '15em',
     }
+  },
+
+  backgroundLines: {
+    width: 642,
+    height: '900vh',
+    borderRight: '1px solid grey',
+    borderLeft: '1px solid grey',
+  },
+
+  circle: {
+  },
+
+  diamond: {
   },
 
   videoDefault: {

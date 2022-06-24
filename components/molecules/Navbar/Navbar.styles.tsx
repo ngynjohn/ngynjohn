@@ -12,7 +12,7 @@ export const useStyles = createStyles((theme) => ({
     paddingLeft: '2em',
     paddingRight: '2em',
     zIndex: 1,
-    [theme.fn.smallerThan('sm')]: {
+    [theme.fn.smallerThan('md')]: {
       justifyContent: 'flex-start',
       paddingLeft: '0',
       paddingRight: '0',
@@ -30,7 +30,7 @@ export const useStyles = createStyles((theme) => ({
     paddingLeft: '2em',
     paddingRight: '2em',
     zIndex: 1,
-    [theme.fn.smallerThan('sm')]: {
+    [theme.fn.smallerThan('md')]: {
       justifyContent: 'flex-start',
       paddingLeft: '0',
       paddingRight: '0',
@@ -38,25 +38,30 @@ export const useStyles = createStyles((theme) => ({
   },
 
   links: {
+    display: 'flex',
+    flex: 1,
     color: 'white',
     gap: 20,
-
-    [theme.fn.smallerThan('sm')]: {
+    [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
   },
 
   brand: {
+    width: '200px',
     display: 'flex',
     alignItems: 'center',
-    marginRight: 'auto',
-    marginLeft: 'auto',
+    justifyContent: 'center',
+    flex: 1,
+    [theme.fn.smallerThan('md')]: {
+      justifyContent: 'flex-start',
+    }
   },
 
   social: {
-    [theme.fn.smallerThan('sm')]: {
+    flex: 1,
+    [theme.fn.smallerThan('md')]: {
       display: 'flex',
-      marginLeft: 'auto',
       marginRight: '25px'
     },
   },
@@ -65,7 +70,7 @@ export const useStyles = createStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     margin: '0',
-    [theme.fn.largerThan('sm')]: {
+    [theme.fn.largerThan('md')]: {
       display: 'none',
     },
   },
