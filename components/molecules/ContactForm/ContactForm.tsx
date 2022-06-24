@@ -62,6 +62,10 @@ const useStyles = createStyles((theme) => {
 
     fields: {
       marginTop: -12,
+      marginRight: 20,
+      [BREAKPOINT]: {
+        marginRight: 0,
+      }
     },
 
     fieldInput: {
@@ -101,6 +105,7 @@ const useStyles = createStyles((theme) => {
     },
 
     title: {
+      fontSize: theme.fontSizes.xl,
       marginBottom: theme.spacing.xl * 1.5,
       fontFamily: `Greycliff CF, ${theme.fontFamily}`,
 
@@ -110,10 +115,15 @@ const useStyles = createStyles((theme) => {
     },
 
     control: {
+      color: 'white',
+      backgroundColor: 'black',
       [BREAKPOINT]: {
         flex: 1,
       },
-    },
+      '&:hover': {
+        backgroundColor: '#656565',
+      },
+    }
   };
 });
 
