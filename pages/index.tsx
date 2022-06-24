@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import {
+  useEffect,
+  useState
+} from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import BackgroundVideo from '../components/atoms/BackgroundVideo/BackgroundVideo';
@@ -20,6 +23,12 @@ const Home: NextPage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const title = opened ? 'Close Menu' : 'Open Menu'
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src= 'https://www.instagram.com/embed.js'
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <ScrollArea
       style={{

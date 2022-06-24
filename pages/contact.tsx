@@ -1,18 +1,18 @@
 import {
-  Text,
   ScrollArea,
 } from '@mantine/core';
+import ContactForm from '../components/molecules/ContactForm/ContactForm';
 
 export default function Contact() {
   return (
     <ScrollArea
       style={{
-        marginTop: 63,
+        height: 'max-content',
+        paddingTop: 63,
+        backgroundColor: '#fafafa',
       }}
     >
-      <Text>
-        Contact Page
-      </Text>
+      <ContactForm />
     </ScrollArea>
   );
 }
