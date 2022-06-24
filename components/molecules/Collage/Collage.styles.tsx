@@ -10,7 +10,7 @@ export const useStyles = createStyles((theme) => ({
     width: '91vw',
     margin: '60px',
     padding: '0',
-    paddingTop: '70px',
+    marginTop: '70px',
     gap: '40px',
      [`@media (max-width: ${theme.breakpoints.xl}px)`]: {
       width: '89vw',
