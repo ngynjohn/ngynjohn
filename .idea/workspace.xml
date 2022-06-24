@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ed55f29e-7086-4ec7-b878-4ebc6f353c31" name="Changes" comment="Nav update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/molecules/ContactForm/ContactForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/ContactForm/ContactForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/molecules/Navbar/Navbar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +104,7 @@
       <workItem from="1655958646556" duration="646000" />
       <workItem from="1655998477953" duration="2348000" />
       <workItem from="1656013882084" duration="3000" />
-      <workItem from="1656032345036" duration="27946000" />
+      <workItem from="1656032345036" duration="28455000" />
     </task>
     <task id="LOCAL-00001" summary="Add dev deps">
       <created>1655502848322</created>

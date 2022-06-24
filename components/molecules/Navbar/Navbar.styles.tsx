@@ -89,7 +89,6 @@ export const useStyles = createStyles((theme) => ({
 
     '&:hover': {
       backgroundColor: 'transparent',
-      transform: 'scale(1.1)',
     },
   },
 

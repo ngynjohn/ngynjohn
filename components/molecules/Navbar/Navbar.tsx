@@ -42,7 +42,6 @@ export default function Navbar({
   const [isOpen, setOpen] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
-
   const items = links.map((link) => (
     <Link
       key={link.label}
@@ -50,23 +49,18 @@ export default function Navbar({
     >
       <Button
         className={cx(classes.link, { [classes.linkActive]: active === link.link })}
-        onClick={() => setActive(link.link)}
         variant="subtle"
       >
         {link.label}
       </Button>
     </Link>
   ));
-
+  const activePage = useEffect(() => {
+    setActive(path);
+  }, [path]);
   const onClick = useCallback(() =>{
     console.log('Burger Clicked!')
   }, [])
-
-  const activeWindow = useCallback(() => {
-    if (isOpen) {
-      setActive(window.location.pathname);
-    }
-  }, [isOpen])
 
   return (
     <nav
@@ -86,36 +80,36 @@ export default function Navbar({
           color='white'
         />
       </Container>
-        <Group
-          className={classes.links}
-          spacing={5}
-        >
-          {items}
-        </Group>
+      <Group
+        className={classes.links}
+        spacing={5}
+      >
+        {items}
+      </Group>
 
-        <Group className={classes.brand}>
-          <Brand />
-        </Group>
+      <Group className={classes.brand}>
+        <Brand />
+      </Group>
 
-        <Group
-          spacing={10}
-          className={classes.social}
-          position="right"
-          noWrap
-        >
-          <a href='https://www.tiktok.com/@ngynjohn?lang=en'>
-            <BrandTiktok
-              color="white"
-              size={25}
-            />
-          </a>
-          <a href='https://www.instagram.com/ngynjohn/'>
-            <BrandInstagram
-              color="white"
-              size={25}
-            />
-          </a>
-        </Group>
+      <Group
+        spacing={10}
+        className={classes.social}
+        position="right"
+        noWrap
+      >
+        <a href='https://www.tiktok.com/@ngynjohn?lang=en'>
+          <BrandTiktok
+            color="white"
+            size={25}
+          />
+        </a>
+        <a href='https://www.instagram.com/ngynjohn/'>
+          <BrandInstagram
+            color="white"
+            size={25}
+          />
+        </a>
+      </Group>
     </nav>
   );
 }
