@@ -9,7 +9,8 @@ import {
   Group,
   ActionIcon,
   Container,
-  Burger
+  Burger,
+  Button
 } from '@mantine/core';
 import {
   useBooleanToggle,
@@ -47,7 +48,13 @@ export default function Navbar({
       key={link.label}
       href={link.link}
     >
-      {link.label}
+      <Button
+        className={cx(classes.link, { [classes.linkActive]: active === link.link })}
+        onClick={() => setActive(link.link)}
+        variant="subtle"
+      >
+        {link.label}
+      </Button>
     </Link>
   ));
 

@@ -42,6 +42,7 @@ export const useStyles = createStyles((theme) => ({
     flex: 1,
     color: 'white',
     gap: 20,
+    paddingLeft: '4px',
     [theme.fn.smallerThan('md')]: {
       display: 'none',
     },
@@ -79,24 +80,23 @@ export const useStyles = createStyles((theme) => ({
     display: 'block',
     lineHeight: 1,
     padding: '8px 12px',
-    borderRadius: theme.radius.sm,
+    borderRadius: theme.radius.lg,
     textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    color: 'white',
     fontSize: theme.fontSizes.sm,
     fontWeight: 500,
+    backgroundColor: 'transparent',
 
     '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+      backgroundColor: 'transparent',
+      transform: 'scale(1.1)',
     },
   },
 
   linkActive: {
     '&, &:hover': {
-      backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.fn.rgba(theme.colors[theme.primaryColor][9], 0.25)
-          : theme.colors[theme.primaryColor][0],
-      color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 3 : 7],
+      backgroundColor: 'transparent',
+      borderColor: 'white',
     },
   },
 }));
