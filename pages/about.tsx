@@ -7,7 +7,7 @@ export default function About() {
   return (
     <ScrollArea
       style={{
-        height: '200vh',
+        marginTop: 63,
       }}
     >
       <Text>

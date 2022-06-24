@@ -30,9 +30,14 @@ interface NavbarProps {
     link: string;
     label: string;
   }[];
+  path: string;
 }
 
-export default function Navbar({ links, isScrolling }: NavbarProps) {
+export default function Navbar({
+  links,
+  isScrolling,
+  path
+}: NavbarProps) {
   const [isOpen, setOpen] = useBooleanToggle(false);
   const [active, setActive] = useState(links[0].link);
   const { classes, cx } = useStyles();
@@ -57,7 +62,13 @@ export default function Navbar({ links, isScrolling }: NavbarProps) {
   }, [isOpen])
 
   return (
-    <nav className={isScrolling ? classes.scrolling : classes.wrapper}>
+    <nav
+      className={
+        isScrolling || path !== '/'
+          ? classes.scrolling
+          : classes.wrapper
+      }
+    >
       <Container className={classes.burger}>
         <Hamburger
           toggled={isOpen}

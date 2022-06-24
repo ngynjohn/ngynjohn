@@ -31,6 +31,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <>
       <Navbar
+        path={path}
         links={
           [
             {

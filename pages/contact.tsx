@@ -1,9 +1,18 @@
-import { Text } from '@mantine/core';
+import {
+  Text,
+  ScrollArea,
+} from '@mantine/core';
 
 export default function Contact() {
   return (
-    <Text>
-      Contact Page
-    </Text>
+    <ScrollArea
+      style={{
+        marginTop: 63,
+      }}
+    >
+      <Text>
+        Contact Page
+      </Text>
+    </ScrollArea>
   );
 }
